@@ -20,7 +20,8 @@ const App = () => {
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
 
   const likePost = postId => {
-    // setPosts(posts.map(id => {id === postId ? ))
+    const updatedPosts = posts.map(post => post.id === postId ? { ...post, likes: post.likes + 1} : post);
+    setPosts(updatedPosts);
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
 
